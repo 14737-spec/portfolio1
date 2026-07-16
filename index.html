@@ -1,29 +1,138 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="th">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio นายธีระชาติ</title>
+<title>Portfolio นายธีระชาติ</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to bottom,#000000,#1a1a1a,#3b3b3b);
+}
+
+/* ดาวตก */
+body::before,
+body::after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:3px;
+    background:linear-gradient(to right,white,transparent);
+    transform:rotate(-35deg);
+    animation:shoot 4s linear infinite;
+}
+
+body::after{
+    top:10%;
+    left:-250px;
+    animation-delay:2s;
+}
+
+@keyframes shoot{
+    0%{
+        top:-10%;
+        left:-20%;
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    100%{
+        top:100%;
+        left:120%;
+        opacity:0;
+    }
+}
+
+/* จุดดาว */
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2;}
+    to{opacity:1;}
+}
+
+/* กล่อง Portfolio */
+.card{
+    position:relative;
+    z-index:10;
+    text-align:center;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 30px rgba(255,255,255,.15);
+    color:white;
+}
+
+.card img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+    box-shadow:0 0 20px cyan;
+    margin-bottom:20px;
+}
+
+h1{
+    color:#00e5ff;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:22px;
+    margin:8px 0;
+}
+</style>
 
 </head>
 
-<body bgcolor="#FF6666">
+<body>
 
-<img src="images/WIN_20260625_14_51_12_Pro.jpg"> <br>
+<!-- ดาว -->
+<div class="star" style="top:10%;left:20%;"></div>
+<div class="star" style="top:20%;left:80%;"></div>
+<div class="star" style="top:30%;left:60%;"></div>
+<div class="star" style="top:50%;left:10%;"></div>
+<div class="star" style="top:70%;left:90%;"></div>
+<div class="star" style="top:80%;left:40%;"></div>
+<div class="star" style="top:15%;left:50%;"></div>
+<div class="star" style="top:60%;left:70%;"></div>
 
-นายธีระชาติ อินทร์ดำ<br>
+<div class="card">
 
+<img src="images/WIN_20260625_14_51_12_Pro.jpg" alt="Profile">
 
+<h1>Portfolio</h1>
 
-นักเรียนชั้นม.6/5<br>
+<p><strong>นายธีระชาติ อินทร์ดำ</strong></p>
 
+<p>นักเรียนชั้น ม.6/5</p>
 
+<p>โรงเรียนพานทอง</p>
 
-โรงเรียนพานทอง
-
-
+</div>
 
 </body>
-
 </html>
